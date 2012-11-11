@@ -19,7 +19,7 @@ ANDROID_SDK_HOME="`find ${PWD} -name android-sdk* -type d`"
 # workspace
 WORKSPACE="jimux-workspace"
 SETTINGS_DIR="${WORKSPACE}/.metadata/.plugins/org.eclipse.core.runtime/.settings"
-mkdir ${SETTINGS_DIR}
+mkdir -p ${SETTINGS_DIR}
 
 cat > ${SETTINGS_DIR}/com.android.ide.eclipse.adt.prefs <<EOF
 com.android.ide.eclipse.adt.fixLegacyEditors=1
