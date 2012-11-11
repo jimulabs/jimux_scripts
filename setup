@@ -4,7 +4,7 @@
 sudo apt-get install unzip openjdk-7-jdk ruby1.9.1 xvfb build-essential
 
 # get eclipse
-wget -O eclipse.zip https://docs.google.com/open?id=0B9cQo3Kbl6AqV0pWYTh0SnZPNEk
+wget -O eclipse.zip https://docs.google.com/uc?export=download&confirm=no_antivirus&id=0B9cQo3Kbl6AqV0pWYTh0SnZPNEk
 unzip eclipse.zip
 ECLIPSE_HOME="`find . -name eclipse* -type d`"
 rm eclipse.zip
