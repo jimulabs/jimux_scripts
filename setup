@@ -21,16 +21,19 @@ WORKSPACE="jimux-workspace"
 SETTINGS_DIR="${WORKSPACE}/.metadata/.plugins/org.eclipse.core.runtime/.settings"
 mkdir -p ${SETTINGS_DIR}
 
-cat > ${SETTINGS_DIR}/com.android.ide.eclipse.adt.prefs <<EOF
+ADT_PREFS_PATH="${SETTINGS_DIR}/com.android.ide.eclipse.adt.prefs"
+echo "Writing ADT prefs: ${ADT_PREFS_PATH}..."
+cat > ${ADT_PREFS_PATH} <<EOF
 com.android.ide.eclipse.adt.fixLegacyEditors=1
 com.android.ide.eclipse.adt.sdk=${ANDROID_SDK_HOME}
 eclipse.preferences.version=1
 EOF
 
 # eclim
-curl -o eclim.jar http://downloads.sourceforge.net/project/eclim/eclim/1.7.11/eclim_1.7.11.jar?r=http%3A%2F%2Feclim.org%2Finstall.html&ts=1352658939&use_mirror=iweb
+curl -o eclim.jar http://cloud.github.com/downloads/jimulabs/jimux_scripts/eclim_1.7.11.jar
 
 # install eclim into eclipse
+echo "Installing eclim..."
 java \
   -Dvim.files=$HOME/.vim \
   -Declipse.home=${ECLIPSE_HOME} \
