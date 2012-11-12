@@ -5,13 +5,13 @@ sudo apt-get install -y unzip openjdk-7-jdk ruby1.9.1 xvfb build-essential
 
 PWD=`pwd`
 # get eclipse
-wget -O eclipse.zip https://github.com/downloads/jimulabs/jimux_scripts/eclipse-3.7.2-ADT20.zip
+curl -o eclipse.zip https://github.com/downloads/jimulabs/jimux_scripts/eclipse-3.7.2-ADT20.zip
 unzip eclipse.zip
 ECLIPSE_HOME="`find ${PWD} -name eclipse* -type d`"
 rm eclipse.zip
 
 # android sdk
-wget -O android-sdk.tgz http://dl.google.com/android/android-sdk_r20.0.3-linux.tgz 
+curl -o android-sdk.tgz http://dl.google.com/android/android-sdk_r20.0.3-linux.tgz 
 tar -zxvf android-sdk.tgz
 rm android-sdk.tgz
 ANDROID_SDK_HOME="`find ${PWD} -name android-sdk* -type d`"
@@ -28,7 +28,7 @@ eclipse.preferences.version=1
 EOF
 
 # eclim
-wget -O eclim.jar http://downloads.sourceforge.net/project/eclim/eclim/1.7.11/eclim_1.7.11.jar?r=http%3A%2F%2Feclim.org%2Finstall.html&ts=1352658939&use_mirror=iweb
+curl -o eclim.jar http://downloads.sourceforge.net/project/eclim/eclim/1.7.11/eclim_1.7.11.jar?r=http%3A%2F%2Feclim.org%2Finstall.html&ts=1352658939&use_mirror=iweb
 
 # install eclim into eclipse
 java \
