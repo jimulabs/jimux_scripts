@@ -5,15 +5,13 @@ sudo apt-get install -y unzip openjdk-7-jdk ruby1.9.1 xvfb build-essential
 
 PWD=`pwd`
 # get eclipse
-curl -o eclipse.zip http://cloud.github.com/downloads/jimulabs/jimux_scripts/eclipse-3.7.2-ADT20.zip
-unzip eclipse.zip
+curl -o eclipse.tar.gz http://cloud.github.com/downloads/jimulabs/jimux_scripts/eclipse-java-3.7.2-linux-ADT20.tar.gz
+tar -zxvf eclipse.tar.gz
 ECLIPSE_HOME="`find ${PWD} -name eclipse* -type d`"
-rm eclipse.zip
 
 # android sdk
 curl -o android-sdk.tgz http://dl.google.com/android/android-sdk_r20.0.3-linux.tgz 
 tar -zxvf android-sdk.tgz
-rm android-sdk.tgz
 ANDROID_SDK_HOME="`find ${PWD} -name android-sdk* -type d`"
 
 # workspace
@@ -33,7 +31,7 @@ EOF
 curl -o eclim.jar http://cloud.github.com/downloads/jimulabs/jimux_scripts/eclim_1.7.11.jar
 
 # install eclim into eclipse
-echo "Installing eclim..."
+echo "Installing eclim... ECLIPSE_HOME=${ECLIPSE_HOME}"
 java \
   -Dvim.files=$HOME/.vim \
   -Declipse.home=${ECLIPSE_HOME} \
