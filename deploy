@@ -3,5 +3,6 @@
 # TODO download jimu plugins
 PWD = `pwd`
 ECLIPSE_HOME="`find ${PWD} -name eclipse* -type d`"
-PLUGIN_FILE="jimux-plugins.zip"
-unzip ${PLUGIN_FILE} -d ${ECLIPSE_HOME}/plugins
+PLUGIN_FILE="jimux-plugins.zip`pwd`"
+echo "ECLIPSE_HOME=${ECLIPSE_HOME}"
+unzip ${PLUGIN_FILE} -d "${ECLIPSE_HOME}/plugins"
