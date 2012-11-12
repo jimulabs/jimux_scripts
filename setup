@@ -7,7 +7,7 @@ PWD=`pwd`
 # get eclipse
 curl -o eclipse.tar.gz http://cloud.github.com/downloads/jimulabs/jimux_scripts/eclipse-java-3.7.2-linux-ADT20.tar.gz
 tar -zxvf eclipse.tar.gz
-ECLIPSE_HOME="`find ${PWD} -name eclipse* -type d`"
+ECLIPSE_HOME="`find ${PWD} -name 'eclipse*' -type d` | head -1"
 
 # android sdk
 curl -o android-sdk.tgz http://dl.google.com/android/android-sdk_r20.0.3-linux.tgz 
