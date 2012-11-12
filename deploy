@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+# TODO download jimu plugins
+PWD = `pwd`
+ECLIPSE_HOME="`find ${PWD} -name eclipse* -type d`"
+PLUGIN_FILE="jimux-plugins.zip"
+unzip ${PLUGIN_FILE} -d ${ECLIPSE_HOME}/plugins
