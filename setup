@@ -3,7 +3,7 @@
 # required packages
 sudo apt-get install -y unzip openjdk-7-jdk ruby1.9.1 xvfb build-essential
 
-PWD=`pwd`
+PWD="`pwd`"
 # get eclipse
 curl -o eclipse.tar.gz http://cloud.github.com/downloads/jimulabs/jimux_scripts/eclipse-java-3.7.2-linux-ADT20.tar.gz
 tar -zxvf eclipse.tar.gz
