@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-if [ "`ps -ALL | grep Xvfb | wc -l`" -gt "0" ]
+if [ "`ps -ALL | grep Xvfb | wc -l`" -eq "0" ]
 then Xvfb :1 -screen 0 1024x768x24 &
 fi
 
