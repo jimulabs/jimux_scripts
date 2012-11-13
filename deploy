@@ -8,6 +8,7 @@ echo "ECLIPSE_HOME=${ECLIPSE_HOME}"
 rm -fr `find ${ECLIPSE_HOME} -name '*jimu*'`
 rm -fr `find ${ECLIPSE_HOME} -name 'eclippers*'`
 tar -zxvf ${PLUGIN_FILE} -C "${ECLIPSE_HOME}/dropins"
-curl -O https://github.com/jimulabs/jimux_scripts/raw/master/launch.sh
-curl -O https://github.com/jimulabs/jimux_scripts/raw/master/launch_with_osgiconsole.sh
+curl -O -L https://github.com/jimulabs/jimux_scripts/raw/master/launch.sh
+curl -O -L https://github.com/jimulabs/jimux_scripts/raw/master/launch_with_osgiconsole.sh
 chmod +x launch*.sh
+echo "Done.  Use ./launch.sh or ./launch_with_osgiconsole.sh"
