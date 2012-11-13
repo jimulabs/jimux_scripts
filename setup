@@ -27,14 +27,14 @@ com.android.ide.eclipse.adt.sdk=${ANDROID_SDK_HOME}
 eclipse.preferences.version=1
 EOF
 
-# eclim
-curl -o eclim.jar http://cloud.github.com/downloads/jimulabs/jimux_scripts/eclim_1.7.11.jar
-
-# install eclim into eclipse
-echo "Installing eclim... ECLIPSE_HOME=${ECLIPSE_HOME}"
-java \
-  -Dvim.files=$HOME/.vim \
-  -Declipse.home=${ECLIPSE_HOME} \
-  -jar eclim.jar install
+# # eclim
+# curl -o eclim.jar http://cloud.github.com/downloads/jimulabs/jimux_scripts/eclim_1.7.11.jar
+# 
+# # install eclim into eclipse
+# echo "Installing eclim... ECLIPSE_HOME=${ECLIPSE_HOME}"
+# java \
+#   -Dvim.files=$HOME/.vim \
+#   -Declipse.home=${ECLIPSE_HOME} \
+#   -jar eclim.jar install
 
 
