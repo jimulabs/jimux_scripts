@@ -12,7 +12,12 @@ ECLIPSE_HOME="`find ${PWD} -name 'eclipse*' -type d | head -1`"
 # android sdk
 curl -o android-sdk.tgz http://dl.google.com/android/android-sdk_r20.0.3-linux.tgz 
 tar -zxvf android-sdk.tgz
-ANDROID_SDK_HOME="`find ${PWD} -name android-sdk* -type d`"
+ANDROID_SDK_HOME="`find ${PWD} -name 'android-sdk*' -type d`"
+./update_android_sdk.rb --sdk-home "$ANDROID_SDK_HOME" \
+  --filter android-8-17,google-api-8-17,"Google AdMob Ads SDK",\
+"Google Analytics SDK","Google Cloud Messaging for Android Library",\
+"Google Play services","Google Play Billing Library",\
+"Google Play Licensing Library"
 
 # workspace
 WORKSPACE="jimux-workspace"
