@@ -12,8 +12,6 @@ curl -O -L https://github.com/jimulabs/jimux_scripts/raw/master/launch.sh
 curl -O -L https://github.com/jimulabs/jimux_scripts/raw/master/launch_with_osgiconsole.sh
 curl -O -L https://github.com/jimulabs/jimux_scripts/raw/master/build_tests.rb
 chmod +x launch*.sh build_tests.rb
-echo <<EOF
-jimux plugins deployed successfully!
+echo "jimux plugins deployed successfully!
  - To launch Eclipse with jimux server, execute ./launch.sh or ./launch_with_osgiconsole.sh
- - To do a test build, open an other console, and execute ./build_tests.rb
-EOF
+ - To do a test build, open an other console, and execute ./build_tests.rb"
