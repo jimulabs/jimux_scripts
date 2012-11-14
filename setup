@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # required packages
-sudo apt-get install -y unzip openjdk-7-jdk ruby1.9.1 xvfb build-essential
+sudo apt-get install -y unzip openjdk-7-jdk ruby1.9.1 xvfb build-essential ant
 
 PWD="`pwd`"
 # get eclipse
