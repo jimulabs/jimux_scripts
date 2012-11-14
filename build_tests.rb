@@ -31,7 +31,6 @@ def build(json, host='localhost', port=1976)
     end
     break unless keep_fetching
   end
-  save!
   socket.close
 end
 
@@ -39,22 +38,17 @@ blocki = yaml2json(%q{
 id: 1
 name: Fruit
 block: App
+properties:
+  appName: Fruit
+  packageName: com.jimulabs.fruit
 children:
   - id: 2
     name: Screen1
     block: Screen
     children: 
-      - id: 3
-        name: button1
-        block: Button4Test
-        eventHandlers:
-          - event: clicked
-            actorId: 4
-            action: set_text
-            params: [value1, $4.text]
       - id: 4
-        name: text1
-        block: TextView4Test
+        name: Text1
+        block: TextView
 })
 
 build(blocki)
