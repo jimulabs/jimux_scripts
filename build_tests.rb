@@ -1,9 +1,11 @@
 #!/usr/bin/env ruby
+require 'socket'
+
 def yaml2json(yml)
   require 'yaml'
   require 'json'
   thing = YAML.load(yml)
-  json = JSON.pretty_generate(thing)
+  json = thing.to_json
 end
 
 def build(json, host='localhost', port=1976)
@@ -22,10 +24,8 @@ def build(json, host='localhost', port=1976)
     when /apk_path=(.+)/
       path = $1
       puts "apk_path=#{path}"
-      self.file = File.open(path)
-      self.error = nil
     when /error=(.+)/
-      self.error = $1
+      puts "error=#{$1}"
     else
       puts "SOME WEIRD RESPONSE? #{line}"
     end
