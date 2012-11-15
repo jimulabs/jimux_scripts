@@ -16,15 +16,19 @@ curl -O -L https://github.com/jimulabs/jimux_scripts/raw/master/update_android_s
 chmod +x update_android_sdk.rb
 ANDROID_SDK_HOME="`find ${PWD} -name 'android-sdk*' -type d`"
 ./update_android_sdk.rb --sdk-home "$ANDROID_SDK_HOME" \
-  --filter android-8-17,google-api-8-17,"Google AdMob Ads SDK",\
+  --filter platform-tool,android-8-17,google-api-8-17,"Google AdMob Ads SDK",\
 "Google Analytics SDK","Google Cloud Messaging for Android Library",\
 "Google Play services","Google Play Billing Library",\
 "Google Play Licensing Library"
 
 # workspace
-WORKSPACE="jimux-workspace"
+WORKSPACE="$HOME/jimux-workspace"
 SETTINGS_DIR="${WORKSPACE}/.metadata/.plugins/org.eclipse.core.runtime/.settings"
 mkdir -p ${SETTINGS_DIR}
+
+# archive_home
+ARCHIVE_HOME="$HOME/jimux_archives"
+mkdir -p $ARCHIVE_HOME
 
 ADT_PREFS_PATH="${SETTINGS_DIR}/com.android.ide.eclipse.adt.prefs"
 echo "Writing ADT prefs: ${ADT_PREFS_PATH}..."
@@ -39,6 +43,7 @@ cat >> $HOME/.bashrc <<EOF
 export ANDROID_SDK_HOME=$ANDROID_SDK_HOME
 export ECLIPSE_HOME=$ECLIPSE_HOME
 export DEFAULT_WORKSPACE=$WORKSPACE
+export JIMUX_ARCHIVE_HOME=$ARCHIVE_HOME
 EOF
 
 echo "Please run this to load environment vars: \". ~/.bashrc\""
