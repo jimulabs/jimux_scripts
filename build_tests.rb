@@ -14,16 +14,19 @@ def build(json, host='localhost', port=1976)
     puts line
     break if line=~/READY/
   end
-  socket.puts "build #{json}"
+  socket.puts "build"
+  socket.puts json
+  socket.puts "#build"
   while line=socket.gets
     keep_fetching = false
     case line
     when /percent=(\d+)/
       puts "#{$1}%"
       keep_fetching = true
-    when /apk_path=(.+)/
-      path = $1
-      puts "apk_path=#{path}"
+    when /src_path=([^;]+);apk_path=([^;]+)/
+      src_path, apk_path = $1, $2
+      puts "src_path=#{src_path}"
+      puts "apk_path=#{apk_path}"
     when /error=(.+)/
       puts "error=#{$1}"
     else
