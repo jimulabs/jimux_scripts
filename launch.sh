@@ -53,4 +53,4 @@ EOF
 
 
 
-DISPLAY=:1 $ECLIPSE_HOME/eclipse -consolelog -application jimux.server -data jimux-workspace -clean $CONSOLE
+DISPLAY=:1 $ECLIPSE_HOME/eclipse -consolelog -application jimux.server -data "$WORKSPACE" -workspace -clean $CONSOLE
