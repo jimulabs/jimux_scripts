@@ -10,9 +10,8 @@ if [ "$1" == "-c" ]; then
   echo "Launching with osgi console..."
 fi
 
-PWD="`pwd`"
-ANDROID_SDK_HOME="`find ${PWD} -name 'android-sdk*' -type d`"
-ECLIPSE_HOME="`find ${PWD} -name 'eclipse*' -type d | head -1`"
+ANDROID_SDK_HOME="`find $HOME -name 'android-sdk*' -type d`"
+ECLIPSE_HOME="`find $HOME -name 'eclipse*' -type d | head -1`"
 
 # workspace
 WORKSPACE="$HOME/jimux-workspace"
