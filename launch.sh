@@ -28,5 +28,13 @@ com.android.ide.eclipse.adt.sdk=${ANDROID_SDK_HOME}
 eclipse.preferences.version=1
 EOF
 
+JDT_UI_PREFS_PATH="${SETTINGS_DIR}/org.eclipse.jdt.ui.prefs"
+echo "Writing JDT_UI prefs: ${JDT_UI_PREFS_PATH}..."
+cat > ${JDT_UI_PREFS_PATH} <<EOF
+org.eclipse.jdt.core.compiler.compliance=1.6
+org.eclipse.jdt.core.compiler.source=1.6
+EOF
+
+
 
 DISPLAY=:1 $ECLIPSE_HOME/eclipse -consolelog -application jimux.server -data jimux-workspace -clean $CONSOLE
