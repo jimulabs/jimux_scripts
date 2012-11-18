@@ -19,8 +19,13 @@ WORKSPACE="$HOME/jimux-workspace"
 SETTINGS_DIR="${WORKSPACE}/.metadata/.plugins/org.eclipse.core.runtime/.settings"
 rm -fr $WORKSPACE
 # mkdir -p ${SETTINGS_DIR}
-curl -L -O https://github.com/downloads/jimulabs/jimux_scripts/jimux-workspace.tar.gz
-tar -zxvf jimux-workspace.tar.gz
+WORKSPACE_TAR="jimux-workspace.tar.gz"
+if [ -f $WORKSPACE_TAR ]; then
+  echo "Using existing workspace tar"
+else
+  curl -L -o $WORKSPACE_TAR https://github.com/downloads/jimulabs/jimux_scripts/jimux-workspace.tar.gz
+fi
+tar -zxvf $WORKSPACE_TAR
 
 ADT_PREFS_PATH="${SETTINGS_DIR}/com.android.ide.eclipse.adt.prefs"
 echo "Writing ADT prefs: ${ADT_PREFS_PATH}..."
