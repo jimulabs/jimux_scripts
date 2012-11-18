@@ -24,7 +24,7 @@ if [ -f $WORKSPACE_TAR ]; then
 else
   curl -L -o $WORKSPACE_TAR https://github.com/downloads/jimulabs/jimux_scripts/jimux-workspace.tar.gz
 fi
-tar -zxvf $WORKSPACE_TAR
+tar -zxvf $WORKSPACE_TAR -C $HOME
 
 ADT_PREFS_PATH="${SETTINGS_DIR}/com.android.ide.eclipse.adt.prefs"
 echo "Writing ADT prefs: ${ADT_PREFS_PATH}..."
