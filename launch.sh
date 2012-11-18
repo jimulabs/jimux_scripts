@@ -5,7 +5,7 @@ then Xvfb :1 -screen 0 1024x768x24 &
 fi
 
 CONSOLE=""
-if [ "$1" -eq "-c" ]; then
+if [ "$1" == "-c" ]; then
   CONSOLE="-console"
   echo "Launching with osgi console..."
 fi
