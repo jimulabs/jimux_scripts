@@ -31,7 +31,10 @@ EOF
 JDT_UI_PREFS_PATH="${SETTINGS_DIR}/org.eclipse.jdt.ui.prefs"
 echo "Writing JDT_UI prefs: ${JDT_UI_PREFS_PATH}..."
 cat > ${JDT_UI_PREFS_PATH} <<EOF
+org.eclipse.jdt.core.compiler.codegen.targetPlatform=1.6
 org.eclipse.jdt.core.compiler.compliance=1.6
+org.eclipse.jdt.core.compiler.problem.assertIdentifier=error
+org.eclipse.jdt.core.compiler.problem.enumIdentifier=error
 org.eclipse.jdt.core.compiler.source=1.6
 EOF
 
