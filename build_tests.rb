@@ -57,7 +57,11 @@ children:
   })
 
   as[:fruit] = %q{
-    app = App.new.config { app_name 'Fruit'}
+    app = App.new.config {
+      app_name "Fruit"
+      package_name "com.jimulabs.fruit"
+    }
+
     geo_location = GeoLocation.new
     photo_dialog = PhotoPickerDialog.new
     image_view = ImageView.new
@@ -85,7 +89,10 @@ children:
   }
 
   as[:responsive] = %q{
-    app = App.new.config {app_name "Responsive"}
+    app = App.new.config {
+      app_name "Responsive"
+      package_name "com.jimulabs.responsive"
+    }
     s2 = Screen.new('SecondScreen') {
       class_name_prefix 'Second'
       add_parts label = TextView.new {text 'second'}
