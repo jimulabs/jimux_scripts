@@ -51,5 +51,5 @@ EOF
 # EOF
 
 
-
-ANDROID_SDK_HOME=$ANDROID_SDK_HOME ECLIPSE_HOME=$ECLIPSE_HOME JAVA_HOME=/usr/lib/jvm/java-7-openjdk-i386 DISPLAY=:1 $ECLIPSE_HOME/eclipse -consolelog -application jimux.server -data "$WORKSPACE" -workspace -clean $CONSOLE
+JIMUX_ARCHIVE_HOME="$HOME/jimux_archives"
+ANDROID_SDK_HOME=$ANDROID_SDK_HOME ECLIPSE_HOME=$ECLIPSE_HOME JIMUX_ARCHIVE_HOME=$JIMUX_ARCHIVE_HOME JAVA_HOME=/usr/lib/jvm/java-7-openjdk-i386 DISPLAY=:1 $ECLIPSE_HOME/eclipse -application jimux.server -data "$WORKSPACE" -workspace -clean $CONSOLE > $HOME/jimux.console.log
