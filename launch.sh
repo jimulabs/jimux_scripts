@@ -52,4 +52,4 @@ EOF
 
 
 
-ANDROID_SDK_HOME=$ANDROID_SDK_HOME ECLIPSE_HOME=$ECLIPSE_HOME DISPLAY=:1 $ECLIPSE_HOME/eclipse -consolelog -application jimux.server -data "$WORKSPACE" -workspace -clean $CONSOLE
+ANDROID_SDK_HOME=$ANDROID_SDK_HOME ECLIPSE_HOME=$ECLIPSE_HOME JAVA_HOME=/usr/lib/jvm/java-7-openjdk-i386 DISPLAY=:1 $ECLIPSE_HOME/eclipse -consolelog -application jimux.server -data "$WORKSPACE" -workspace -clean $CONSOLE
