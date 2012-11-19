@@ -18,7 +18,7 @@ WORKSPACE="$HOME/jimux-workspace"
 SETTINGS_DIR="${WORKSPACE}/.metadata/.plugins/org.eclipse.core.runtime/.settings"
 rm -fr $WORKSPACE
 # mkdir -p ${SETTINGS_DIR}
-WORKSPACE_TAR="jimux-workspace.tar.gz"
+WORKSPACE_TAR="$HOME/jimux-workspace.tar.gz"
 if [ -f $WORKSPACE_TAR ]; then
   echo "Using existing workspace tar"
 else
